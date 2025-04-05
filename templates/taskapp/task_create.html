@@ -1,0 +1,8 @@
+{% extends 'taskapp/base.html' %}
+{% block content %}
+<form action="list/">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="send"></input>
+</form>
+{% endblock %}
