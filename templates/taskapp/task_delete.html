@@ -5,8 +5,9 @@
     <h2>Оновлення завдання</h2>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Оновити завдання</button>
+        <p>Чи ви впевнені?</p>
+        <input type="submit" value="Так"></input>
     </form>
+    <a href="{% url 'task-list' %}"><button>NO</button></a>
 </div>
 {% endblock %}

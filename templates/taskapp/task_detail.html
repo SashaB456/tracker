@@ -1,5 +1,16 @@
-{% extends 'base.html' %}
+{% extends 'taskapp/base.html' %}
 {% block content %}
+<a href="{% url 'task-list' %}">Назад</a>
+<a href="{% url 'edit-view' task.pk %}">Змінити</a>
 <p>{{task.name}}</p>
 <p>{{task.description}}</p>
+<p>{{task.user}}</p>
+<p>{{task.priority}}</p>
+<p>{{task.status}}</p>
+<ul>
+    {% for comment in task.comment_set.all %}
+    <li>{{comment.user}}</li>
+    <li>{{comment.content}}</li>
+    {% endfor %}
+</ul>
 {% endblock %}

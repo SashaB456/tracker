@@ -1,10 +1,6 @@
 {% extends 'taskapp/base.html' %}
 {% block content %}
 {% for task in tasks %}
-<p>{{task.name}}</p>
-<p>{{task.description}}</p>
-<p>{{task.user}}</p>
-<p>{{task.priority}}</p>
-<p>{{task.status}}</p>
+<a href="{% url 'task-detail' task.pk %}">{{task.name}}</a>
 {% endfor %}
 {% endblock %}
